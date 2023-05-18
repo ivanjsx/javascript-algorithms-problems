@@ -14,8 +14,14 @@
 */
 
 function palindrome(str) {
-    // Напишите код здесь
-}
+    const strLower = str.toLowerCase();
+    for (let i = 0; i < strLower.length / 2; i = i + 1) {
+        if (strLower.at(i) !== strLower.at(-(i+1))) {
+            return false;
+        };
+    };
+    return true;
+};
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 

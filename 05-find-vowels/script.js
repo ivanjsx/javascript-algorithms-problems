@@ -9,9 +9,19 @@
  *
 */
 
+const vowels = ['а', 'я', 'о', 'ё', 'у', 'ю', 'ы', 'и', 'э', 'е'];
+
 function findVowels(str) {
-    // Напишите код здесь
-}
+    let counter = 0;
+    for (let i = 0; i < str.length; i = i + 1) {
+        counter += Number(
+            vowels.some(
+                (vowel) => str[i] === vowel || str[i] === vowel.toUpperCase()
+            )
+        );
+    };
+    return counter;
+};
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 

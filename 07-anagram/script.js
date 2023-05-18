@@ -9,10 +9,24 @@
 */
 
 function anagram(str1, str2) {
-    // Напишите код здесь
-}
+    if (str1.length !== str2.length) {
+        return false;
+    };
+    lowercaseStr1 = str1.toLowerCase();
+    lowercaseStr2 = str2.toLowerCase();
+    if (lowercaseStr1 === lowercaseStr2) {
+        return false;
+    };
+    for (let i = 0; i < lowercaseStr1.length; i = i + 1) {
+        if (!lowercaseStr2.includes(lowercaseStr1[i])) {
+            return false;
+        };
+    };
+    return true;
+};
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(anagram('finder', 'Friend')); // true
 console.log(anagram('hello', 'bye')); // false
+console.log(anagram('up', 'UP')); // false
